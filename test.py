@@ -1,2 +1,2 @@
-wena = "hola fer"
-print(hola)
+first_line = "hola curso"
+print(first_line)
