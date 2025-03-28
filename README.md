@@ -3,7 +3,7 @@ Material docente para el curso ME5150 en otoño de 2025.
 
 ## Recuerdo de puesta en marcha:
 
-### Abrir CMD en windows e ir a la carpeta del ambiente virtual:
+### Abrir CMD en windows o una terminal en Linux/Mac e ir a la carpeta del ambiente virtual:
 
 Por ejemplo, si crearon su carpeta de ambiente en el escritorio y se llama "carpeta_robotica", ejecutar en cmd:
 
