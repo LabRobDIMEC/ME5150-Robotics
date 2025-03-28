@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot name="scara_2dof">
+
+    <!-- Base fija -->
+    <link name="base"/>
+
+    <!-- Articulación 1 (Primer DOF) -->
+    <joint name="joint1" type="revolute">
+        <parent link="base"/>
+        <child link="link1"/>
+        <origin xyz="0 0 0.3" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/> <!-- Rotación en Z -->
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+    </joint>
+
+    <!-- Primer link -->
+    <link name="link1">
+        <visual>
+            <geometry>
+                <box size="0.4 0.1 0.05"/> <!-- Barra del brazo -->
+            </geometry>
+            <origin xyz="0.2 0 0" rpy="0 0 0"/>
+        </visual>
+    </link>
+
+    <!-- Articulación 2 (Segundo DOF) -->
+    <joint name="joint2" type="revolute">
+        <parent link="link1"/>
+        <child link="link2"/>
+        <origin xyz="0.4 0 0" rpy="0 0 0"/> <!-- Unido al final del link1 -->
+        <axis xyz="0 0 1"/> <!-- Rotación en Z -->
+        <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+    </joint>
+
+    <!-- Segundo link -->
+    <link name="link2">
+        <visual>
+            <geometry>
+                <box size="0.3 0.1 0.05"/> <!-- Segunda barra del brazo -->
+            </geometry>
+            <origin xyz="0.15 0 0" rpy="0 0 0"/>
+        </visual>
+    </link>
+
+</robot>
