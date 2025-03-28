@@ -8,6 +8,7 @@ Material docente para el curso ME5150 en otoño de 2025.
 Por ejemplo, si crearon su carpeta de ambiente en el escritorio y se llama "carpeta_robotica", navegen hasta ella usando "cd":
 
 `cd Desktop`
+
 `cd carpeta_robotica`
 
 ### Una vez dentro de la carpeta ambiente, se activa ejecutando:
