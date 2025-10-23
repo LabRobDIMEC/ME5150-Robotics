@@ -57,3 +57,36 @@ def convertir_pixel_a_mm(punto_pixel, matriz_transformacion):
 
 
 
+img = cv2.imread("foto.jpg", cv2.IMREAD_GRAYSCALE)
+
+detecciones = detectar_arucos(img)
+
+for d in detecciones:
+    print(f"ID: {d['id']}, Posición: {d['posicion']}, Orientación: {d['orientacion_grados']:.2f}°")
+posiciones_reales_mm = {
+ 3: (12, 25),
+ 9: (12, 15),
+ 15: (-12, 15),
+ 6: (-12, 25)
+}
+
+print("holaaaa")
+
+# Filtrar las posiciones de IDs que tienes posiciones reales definidas
+puntos_pixeles = []
+puntos_mm = []
+for d in detecciones:
+    id_ = d['id']
+    if id_ in posiciones_reales_mm:
+        print("hola")
+        puntos_pixeles.append(d['posicion'])
+        puntos_mm.append(posiciones_reales_mm[id_])
+# Calcular matriz de transformación píxeles -> mm
+matriz_transformacion = calcular_transformacion(puntos_pixeles, puntos_mm)
+# Ahora convierte un punto cualquiera (por ejemplo (350, 250) px)
+punto_pixel = (210, 200)
+punto_mm = convertir_pixel_a_mm(punto_pixel, matriz_transformacion)
+print(f"El punto {punto_pixel} en píxeles corresponde a {punto_mm} en mm")
+
+
+
